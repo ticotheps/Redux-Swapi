@@ -38,7 +38,5 @@ const mapStateToProps = state => ({
 export default connect(
   /* mapStateToProps replaces null here */
   mapStateToProps,
-  {
-    /* action creators go here */
-  }
+  { getChar }
 )(CharacterListView);
