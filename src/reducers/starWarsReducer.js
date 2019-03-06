@@ -1,7 +1,7 @@
 import {
-  FETCH_CHAR_FETCHING,
-  FETCH_CHAR_SUCCESS,
-  FETCH_CHAR_FAILURE
+  FETCH_CHARS_FETCHING,
+  FETCH_CHARS_SUCCESS,
+  FETCH_CHARS_FAILURE
 } from "../actions";
 
 
@@ -17,20 +17,20 @@ export const charsReducer = (state = initialState, action) => {
     // Fill me in with the important reducers
     // action types should be FETCHING, SUCCESS and FAILURE
     // your switch statement should handle all of these cases.
-    case FETCH_CHAR_FETCHING:
+    case FETCH_CHARS_FETCHING:
       return {
         ...state,
         error: '',
         isFetching: true
       };
-    case FETCH_CHAR_SUCCESS:
+    case FETCH_CHARS_SUCCESS:
       return {
         ...state,
         error: '',
         isFetching: false,
         characters: action.payload
       };
-    case FETCH_CHAR_FAILURE:
+    case FETCH_CHARS_FAILURE:
       return {
         ...state,
         error: "Whoops, something went wrong.",
