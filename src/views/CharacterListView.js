@@ -11,7 +11,9 @@ class CharacterListView extends React.Component {
   }
 
   componentDidMount() {
+    console.log("CDM is running!");
     // call our action
+    getChar();
   }
 
   render() {
