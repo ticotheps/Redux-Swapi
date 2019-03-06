@@ -6,7 +6,9 @@ import {
 
 
 const initialState = {
-  characters: []
+  characters: [], 
+  fetching: false,
+  error: ''
   // Array characters, Boolean fetching, null error.
 };
 export const charsReducer = (state = initialState, action) => {
