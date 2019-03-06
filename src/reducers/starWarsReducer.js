@@ -8,7 +8,7 @@ import {
 const initialState = {
   characters: [], 
   isFetching: false,
-  error: ''
+  error: null
   // Array characters, Boolean fetching, null error.
 };
 
@@ -20,21 +20,22 @@ export const charsReducer = (state = initialState, action) => {
     case FETCH_CHARS_FETCHING:
       return {
         ...state,
-        error: '',
         isFetching: true
-      };
-    case FETCH_CHARS_SUCCESS:
-      return {
-        ...state,
-        error: '',
-        isFetching: false,
-        characters: action.payload
       };
     case FETCH_CHARS_FAILURE:
       return {
         ...state,
-        error: "Whoops, something went wrong.",
-        isFetching: false
+        isFetching: false,
+        error: action.payload,
+      };
+    case FETCH_CHARS_SUCCESS:
+      return {
+        ...state,
+        characters: [
+          ...state.characters,
+          ...action.payload
+        ],
+        isFetching: false,
       };
     default:
       return state;
